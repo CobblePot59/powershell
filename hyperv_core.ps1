@@ -21,4 +21,8 @@ else
 	winrm quickconfig
 	set-item wsman:\localhost\Client\TrustedHosts -value "$name"
 	cmdkey.exe /add:$name /user:Administrator /pass
+	Dism /online /Enable-Feature /FeatureName:Microsoft-Hyper-V-All
+	Dism /online /Enable-Feature /FeatureName:Microsoft-Hyper-V-Tools-All
+	Dism /online /Enable-Feature /FeatureName:Microsoft-Hyper-V-Management-PowerShell
+	Dism /online /Enable-Feature /FeatureName:Microsoft-Hyper-V-Management-Clients
 }
