@@ -1,3 +1,4 @@
+#Previous powerwershell version (<5.0)
 function Expand-ZIPFile($file, $destination) {
 	$shell = new-object -com shell.application
 	$zip = $shell.NameSpace($file)
