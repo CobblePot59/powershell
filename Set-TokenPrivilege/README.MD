@@ -26,7 +26,7 @@ When you try to run a command without a privilege enabled, you’ll usually get 
 To enable SeDebugPrivilege:
 
 ```
-iex (iwr -Uri "https://github.com/CobblePot59/powershell/raw/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1" -UseBasicParsing).Content; Set-TokenPrivilege.ps1 -Privilege SeDebugPrivilege
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege
 ```
 
 **Disable a Privilege**
@@ -34,7 +34,7 @@ iex (iwr -Uri "https://github.com/CobblePot59/powershell/raw/master/Set-TokenPri
 To disable SeDebugPrivilege:
 
 ```
-iex (iwr -Uri "https://github.com/CobblePot59/powershell/raw/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1" -UseBasicParsing).Content; Set-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -Disable
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -Disable
 ```
 
 **Target Another Process**
@@ -42,5 +42,6 @@ iex (iwr -Uri "https://github.com/CobblePot59/powershell/raw/master/Set-TokenPri
 To adjust the privilege for a specific process by its ID:
 
 ```
-iex (iwr -Uri "https://github.com/CobblePot59/powershell/raw/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1" -UseBasicParsing).Content; Set-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -ProcessId 1234
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -ProcessId 1234
+
 ```
