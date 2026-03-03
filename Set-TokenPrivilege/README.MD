@@ -23,18 +23,33 @@ When you try to run a command without a privilege enabled, you’ll usually get 
 
 **Activate a Privilege**
 
-To enable SeDebugPrivilege:
+To enable SeShutdownPrivilege:
 
 ```
-iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Set-TokenPrivilege.ps1; .\Set-TokenPrivilege.ps1 -Privilege SeShutdownPrivilege
+```
+
+```
+[C:\Users\leeholm]
+PS:112 > whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                          State
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
 ```
 
 **Disable a Privilege**
 
-To disable SeDebugPrivilege:
+To disable SeShutdownPrivilege:
 
 ```
-iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -Disable
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Set-TokenPrivilege.ps1; .\Set-TokenPrivilege.ps1 -Privilege SeShutdownPrivilege -Disable
 ```
 
 **Target Another Process**
@@ -42,6 +57,7 @@ iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/
 To adjust the privilege for a specific process by its ID:
 
 ```
-iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Se-TokenPrivilege.ps1; .\Se-TokenPrivilege.ps1 -Privilege SeDebugPrivilege -ProcessId 1234
+iwr 'https://raw.githubusercontent.com/CobblePot59/powershell/refs/heads/master/Set-TokenPrivilege/Set-TokenPrivilege.ps1' -OutFile Set-TokenPrivilege.ps1; .\Set-TokenPrivilege.ps1 -Privilege SeShutdownPrivilege -ProcessId 1234
 
 ```
+
